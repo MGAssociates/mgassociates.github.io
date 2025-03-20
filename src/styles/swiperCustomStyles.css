@@ -1,0 +1,86 @@
+/* Custom Swiper Styles to match previous OwlCarousel styling */
+
+/* Partner Carousel Styles */
+.partner-swiper .swiper-button-next,
+.partner-swiper .swiper-button-prev {
+    color: #0075ff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+}
+
+.partner-swiper .swiper-button-next:after,
+.partner-swiper .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.partner-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Industry Carousel Styles */
+.industry-swiper .swiper-button-next,
+.industry-swiper .swiper-button-prev {
+    color: #0075ff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+}
+
+.industry-swiper .swiper-button-next:after,
+.industry-swiper .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.industry-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Testimonial Carousel Styles */
+.testimonial-swiper .swiper-button-next,
+.testimonial-swiper .swiper-button-prev {
+    color: #0075ff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+}
+
+.testimonial-swiper .swiper-button-next:after,
+.testimonial-swiper .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+    background: #0075ff;
+    opacity: 0.7;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #0075ff;
+}
+
+.testimonial-swiper .swiper-slide {
+    height: auto;
+}
+
+/* Maintain the same testimonial card styling */
+.testimonial-item {
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

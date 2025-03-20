@@ -1,108 +1,63 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import testimonialsData from '../../data/testimonialsData';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const TestimonialCarousel = () => {
-    const carouselRef = useRef(null);
-
-    useEffect(() => {
-        // Initialize Owl Carousel with jQuery when component mounts
-        const $ = window.jQuery;
-        if ($) {
-            $(carouselRef.current).owlCarousel({
-                autoplay: true,
-                smartSpeed: 1500,
-                center: false,
-                dots: true,
-                loop: true,
-                margin: 25,
-                nav: true,
-                navText: [
-                    '<i class="fa fa-angle-left"></i>',
-                    '<i class="fa fa-angle-right"></i>'
-                ],
-                responsiveClass: true,
-                responsive: {
-                    0: { items: 1 },
-                    576: { items: 1 },
-                    768: { items: 2 },
-                    992: { items: 2 },
-                    1200: { items: 3 }
-                }
-            });
-        }
-
-        // Cleanup function to destroy Owl Carousel instance
-        return () => {
-            const $ = window.jQuery;
-            if ($) {
-                $(carouselRef.current).owlCarousel('destroy');
-            }
-        };
-    }, []);
-
-    // Testimonials data
-    const testimonials = [
-        {
-            name: 'Rajesh Pandey',
-            image: 'img/testimional/R img.png',
-            testimonial: 'I wanted to take a moment to sincerely thank you Manish Ji for your exceptional financial services and support. Your expertise in this industry is truly remarkable.'
-        },
-        {
-            name: 'Akshay Kumar',
-            image: 'img/testimional/A img.png',
-            testimonial: 'I acquired assistance in submitting my income tax return, and it was successfully processed. Mr. Manish & team is highly skilled in financial services and is very dedicated to completing the procedure on time. I warmly recommend any upcoming services.'
-        },
-        {
-            name: 'Gopal Bakthavachalam',
-            image: 'img/testimional/G img.png',
-            testimonial: 'They successfully processed my income tax return and they are very strong in Financial Services also very much committed to no games, quality and on time delivery on promises made by the team. I strongly recommend any future services.'
-        },
-        {
-            name: 'Shalini Kumari',
-            image: 'img/testimional/s img.png',
-            testimonial: 'We wanted to express our sincere gratitude for your outstanding financial services. Your dedication, expertise, and timely delivery have made a significant impact in our financial growth. Your services with regards to ITR has been particularly valuable, and we appreciate the confidence you\'ve instilled in our financial decision-making. Thank you for your support.'
-        },
-        {
-            name: 'Murtaza ak',
-            image: 'img/testimional/M img.png',
-            testimonial: 'This is a CA firm who caters to all your indirect and direct taxation needs. Very experienced team and have many associate offices across the country.'
-        }
-    ];
-
     return (
-        <div className="owl-carousel testimonial-carousel wow fadeInUp" ref={carouselRef} data-wow-delay="0.2s">
-            {testimonials.map((testimonial, index) => (
-                <div className="testimonial-item" key={index}>
-                    <div className="testimonial-quote-left">
-                        <FontAwesomeIcon icon={faQuoteLeft} className="fa-2x" />
-                    </div>
-                    <div className="testimonial-img">
-                        <img src={testimonial.image} className="img-fluid" alt={`${testimonial.name} testimonial photo`} />
-                    </div>
-                    <div className="testimonial-text">
-                        <p className="mb-0">{testimonial.testimonial}</p>
-                    </div>
-                    <div className="testimonial-title">
-                        <div>
-                            <h4 className="mb-0">{testimonial.name}</h4>
+        <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={25}
+            slidesPerView={1}
+            navigation={true}
+            pagination={{ clickable: true }}
+            loop={true}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            breakpoints={{
+                768: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 }
+            }}
+            className="testimonial-swiper wow fadeInUp"
+            data-wow-delay="0.2s"
+        >
+            {testimonialsData.map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                    <div className="testimonial-item">
+                        <div className="testimonial-quote-left">
+                            <FontAwesomeIcon icon={faQuoteLeft} className="fa-2x" />
                         </div>
-                        <div className="d-flex text-primary">
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
+                        <div className="testimonial-img">
+                            <img src={testimonial.image} className="img-fluid" alt={`${testimonial.name} testimonial photo`} />
+                        </div>
+                        <div className="testimonial-text">
+                            <p className="mb-0">{testimonial.testimonial}</p>
+                        </div>
+                        <div className="testimonial-title">
+                            <div>
+                                <h4 className="mb-0">{testimonial.name}</h4>
+                            </div>
+                            <div className="d-flex text-primary">
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                            </div>
+                        </div>
+                        <div className="testimonial-quote-right">
+                            <FontAwesomeIcon icon={faQuoteRight} className="fa-2x" />
                         </div>
                     </div>
-                    <div className="testimonial-quote-right">
-                        <FontAwesomeIcon icon={faQuoteRight} className="fa-2x" />
-                    </div>
-                </div>
+                </SwiperSlide>
             ))}
-        </div>
+        </Swiper>
     );
 };
 
