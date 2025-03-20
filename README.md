@@ -27,29 +27,10 @@ npm run build
 
 ## Deployment to GitHub Pages
 
-1. Update the `homepage` field in `package.json` with your GitHub username:
-```json
-"homepage": "https://yourusername.github.io/mga"
-```
-
-2. Deploy to GitHub Pages:
+1. Deploy to GitHub Pages:
 ```bash
 npm run deploy
 ```
-
-3. Setup GitHub repository:
-    - Create a new repository named "mga" on GitHub
-    - Connect your local repository to the GitHub repository:
-   ```bash
-   git remote add origin https://github.com/yourusername/mga.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-4. Enable GitHub Pages in the repository settings:
-    - Go to Settings > Pages
-    - Set the source to "gh-pages" branch
-    - Your site will be published at https://yourusername.github.io/mga/
 
 ## Project Structure
 

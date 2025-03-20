@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.css';
+// import { BrowserRouter as Router } from 'react-router-dom';
+
 
 // Import components
 import Header from './components/common/Header';
@@ -18,7 +20,8 @@ import ContactPage from './pages/ContactPage';
 
 function App() {
   // Set the basename to '/mga' for GitHub Pages
-  const basename = process.env.NODE_ENV === 'production' ? '/mga' : '/';
+  // const basename = process.env.NODE_ENV === 'production' ? '/mga' : '/';
+  const basename = '/';
 
   // Move useEffect inside the component
   useEffect(() => {
