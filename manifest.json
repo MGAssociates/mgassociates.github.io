@@ -1,0 +1,15 @@
+{
+  "short_name": "MGA Associates",
+  "name": "MGA & Associates - Financial and Audit Services",
+  "icons": [
+    {
+      "src": "img/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
