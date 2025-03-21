@@ -1,0 +1,21 @@
+export const serviceOptions = [
+    "General Inquiry", 
+    "Tax Consultation", 
+    "Legal Advisory", 
+    "Financial Planning", 
+    "Auditing", 
+    "Business Registration", 
+    "Company Incorporation", 
+    "GST Filing", 
+    "Income Tax Return Filing", 
+    "Trademark Registration", 
+    "Accounting & Bookkeeping", 
+    "Payroll Services", 
+    "Loan & Investment Advisory", 
+    "Business License & Permits", 
+    "Import & Export Compliance", 
+    "Contract Drafting & Review", 
+    "Legal Dispute Resolution", 
+    "Startup Consultation", 
+    "Other Services"
+];
