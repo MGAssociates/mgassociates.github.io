@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import BreadcrumbSection from '../components/about/BreadcrumbSection';
 import AboutSection from '../components/about/AboutSection';
 import CredentialsSection from '../components/about/CredentialsSection';

@@ -1,4 +1,6 @@
 // blogListData.js - Modularized blog data for MGA & Associates
+import blogData from '../data/blogData';
+
 
 export const blogContentData = {
     'budget-2025': {
@@ -213,13 +215,14 @@ export const blogContentData = {
 };
 
 // Helper function to get a summary of a blog for blog listing
+// Helper function to get a summary of a blog for blog listing
 export const getBlogSummary = (blogId) => {
-    const blog = blogData[blogId];
+    // Find the blog by ID
+    const blog = blogData.find((b) => b.id === blogId);
     if (!blog) return null;
 
-    // Create a summary object with essential information
     return {
-        id: blogId,
+        id: blog.id,
         title: blog.title,
         image: blog.image,
         altText: blog.altText,
@@ -287,4 +290,6 @@ export default {
     getBlogById,
     getBlogSummaryById,
     getAllBlogs
+    
 };
+

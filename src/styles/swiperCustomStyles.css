@@ -3,7 +3,7 @@
 /* Partner Carousel Styles */
 .partner-swiper .swiper-button-next,
 .partner-swiper .swiper-button-prev {
-    color: #0075ff;
+    color: #cea551;
     font-size: 24px;
     width: 40px;
     height: 40px;
@@ -25,7 +25,7 @@
 /* Industry Carousel Styles */
 .industry-swiper .swiper-button-next,
 .industry-swiper .swiper-button-prev {
-    color: #0075ff;
+    color: #cea551;
     font-size: 24px;
     width: 40px;
     height: 40px;
@@ -47,7 +47,7 @@
 /* Testimonial Carousel Styles */
 .testimonial-swiper .swiper-button-next,
 .testimonial-swiper .swiper-button-prev {
-    color: #0075ff;
+    color: #cea551;
     font-size: 24px;
     width: 40px;
     height: 40px;
@@ -60,13 +60,13 @@
 }
 
 .testimonial-swiper .swiper-pagination-bullet {
-    background: #0075ff;
+    background: #cea551;
     opacity: 0.7;
 }
 
 .testimonial-swiper .swiper-pagination-bullet-active {
     opacity: 1;
-    background: #0075ff;
+    background: #cea551;
 }
 
 .testimonial-swiper .swiper-slide {
