@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getBlogById } from '../data/blogData';
+import { getBlogById } from '../data/blog/blogData';
+import { getBlogPostById } from '../data/blog/api';
 import BlogContent from '../components/blog/BlogContent';
 import Loader from '../components/common/Loader';
 import ErrorMessage from '../components/common/ErrorMessage';
@@ -14,7 +15,7 @@ const BlogDetailPage = () => {
     useEffect(() => {
         // Simulate data fetching from API
         setTimeout(() => {
-            const blogData = getBlogById(blogId);
+            const blogData = getBlogPostById(blogId);
             if (blogData) {
                 setBlog(blogData);
                 setLoading(false);

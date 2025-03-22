@@ -1,31 +1,34 @@
 import React, {useEffect, useState} from 'react';
-import {getAllBlogs} from '../data/blogData';
 import SectionHeader from '../components/common/SectionHeader';
 import BlogGrid from '../components/blog/BlogGrid';
+import { getBlogPosts } from '../data/blog/api';
 
-/**
- * Blog Page component to display all blog posts
- */
 const BlogPage = () => {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Simulate API call to get blogs
-        const fetchBlogs = async () => {
+        async function fetchBlogs() {
             try {
-                // Get blogs from data source
-                const data = getAllBlogs();
+                setLoading(true);
+                const data = await getBlogPosts();
+                console.log('Resolved blog data:', data); // Log the resolved data
                 setBlogs(data);
-            } catch (error) {
-                console.error('Error fetching blogs:', error);
+            } catch (err) {
+                console.error('Error fetching blogs:', err);
+                setError('Failed to load blog posts');
             } finally {
                 setLoading(false);
             }
-        };
+        }
 
         fetchBlogs();
     }, []);
+
+    if (loading) return <div>Loading blogs...</div>;
+    if (error) return <div>{error}</div>;
+    if (!blogs || blogs.length === 0) return <div>No blogs available</div>;
 
     return (
         <>

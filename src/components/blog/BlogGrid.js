@@ -8,20 +8,27 @@ import BlogCard from './BlogCard';
  * @param {Array} blogs - Array of blog data objects
  */
 const BlogGrid = ({ blogs }) => {
+    console.log('Blogs data:', blogs);
+
     // Add a check to prevent mapping over undefined
-    if (!blogs || !Array.isArray(blogs)) {
+    if (!blogs || !Array.isArray(blogs) || blogs.length === 0) {
         return <div>No blogs available</div>; // Or any loading state UI
     }
 
     return (
         <div className="row g-4">
-            {blogs.map((blog) => (
-                <div className="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s" key={blog.id}>
-                    <Link to={`/blog/${blog.id}`}>
-                        <BlogCard blog={blog} />
-                    </Link>
-                </div>
-            ))}
+            {blogs.map((blog) => {
+                // Get the unique identifier, preferring id but falling back to _id
+                const uniqueId = blog.id || blog._id;
+
+                return (
+                    <div className="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s" key={uniqueId}>
+                        <Link to={`/blog/${uniqueId}`}>
+                            <BlogCard blog={blog} />
+                        </Link>
+                    </div>
+                );
+            })}
         </div>
     );
 };
@@ -29,11 +36,16 @@ const BlogGrid = ({ blogs }) => {
 BlogGrid.propTypes = {
     blogs: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            description: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
-            altText: PropTypes.string.isRequired
+            // Allow for both id and _id fields
+            id: PropTypes.string,
+            _id: PropTypes.string,
+            title: PropTypes.string,
+            // Allow for both description and summary fields
+            description: PropTypes.string,
+            summary: PropTypes.string,
+            image: PropTypes.string,
+            // Make altText optional
+            altText: PropTypes.string
         })
     ).isRequired
 };

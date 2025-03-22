@@ -1,7 +1,3 @@
-// blogListData.js - Modularized blog data for MGA & Associates
-import blogData from '../data/blogData';
-
-
 export const blogContentData = {
     'budget-2025': {
         title: 'Budget 2025: A Win for the Common Man or Big Corporations?',
@@ -290,6 +286,5 @@ export default {
     getBlogById,
     getBlogSummaryById,
     getAllBlogs
-    
 };
 
