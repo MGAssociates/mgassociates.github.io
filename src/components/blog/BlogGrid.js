@@ -8,6 +8,11 @@ import BlogCard from './BlogCard';
  * @param {Array} blogs - Array of blog data objects
  */
 const BlogGrid = ({ blogs }) => {
+    // Add a check to prevent mapping over undefined
+    if (!blogs || !Array.isArray(blogs)) {
+        return <div>No blogs available</div>; // Or any loading state UI
+    }
+
     return (
         <div className="row g-4">
             {blogs.map((blog) => (

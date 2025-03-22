@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { getAllBlogs } from '../data/blogData';
-import Breadcrumb from '../components/common/Breadcrumb';
+import React, {useEffect, useState} from 'react';
+import {getAllBlogs} from '../data/blogData';
 import SectionHeader from '../components/common/SectionHeader';
 import BlogGrid from '../components/blog/BlogGrid';
 
@@ -30,12 +29,6 @@ const BlogPage = () => {
 
     return (
         <>
-            {/* Breadcrumb */}
-            <Breadcrumb
-                title="Blogs"
-                items={[{ label: 'Blogs', link: '/blog' }]}
-            />
-
             {/* Blog Section */}
             <div className="container-fluid service pb-5">
                 <div className="container pb-5">
